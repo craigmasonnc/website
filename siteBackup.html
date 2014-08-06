@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<style>
+.svgHead {
+top:0;
+position:fixed;
+z-index:99998;
+left:0;
+}
+.divBody{
+}
+</style>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+
+<object type="image/svg+xml" data="header0.svg" class="svgHead" id="svgHead">Your browswer does not support SVG</object>
+
+<div id="divBody" class="divBody">
+
+<p>This guy i a pretty intelligent programmer.</p>
+
+<p>You should probably hire him.</p>
+
+<p>here<br>we<br>are<br>adding<br>some<br>space<br>for<br>reasons<br>cant<br>think<br>of<br>things<br>to<br>type<br>but<br>thats<br>ok<br>yeah<br>fine</p>
+
+<p>here<br>we<br>are<br>adding<br>some<br>space<br>for<br>reasons<br>cant<br>think<br>of<br>things<br>to<br>type<br>but<br>thats<br>ok<br>yeah<br>fine</p>
+
+<p>here<br>we<br>are<br>adding<br>some<br>space<br>for<br>reasons<br>cant<br>think<br>of<br>things<br>to<br>type<br>but<br>thats<br>ok<br>yeah<br>fine</p>
+
+<p>here<br>we<br>are<br>adding<br>some<br>space<br>for<br>reasons<br>cant<br>think<br>of<br>things<br>to<br>type<br>but<br>thats<br>ok<br>yeah<br>fine</p>
+
+
+<span id="result">&nbsp;</span>
+</div>
+
+<script>
+var windowHeight=$(window).height();
+var origHeight=windowHeight*0.2;
+var currHeight=origHeight;
+var windowWidth=$(window).width();
+$("#svgHead").height(currHeight);
+$("#svgHead").width(windowWidth);
+$("#divBody").css("margin-top",currHeight);
+
+$("#result").html("currHeight = "+currHeight);
+
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+      // downscroll code
+      currHeight=currHeight-(windowHeight/500);
+      $("#svgHead").height(currHeight);
+      svgBottom=$("#svgHead").position().top+$("svgHead").outerHeight(true);
+      $("#divBody").css("margin-top",currHeight);
+$("#result").html("currHeight = "+currHeight);
+   } else {
+      // upscroll code
+      currHeight=currHeight+(windowHeight/500);
+      $("#svgHead").height(currHeight);
+      svgBottom=$("#svgHead").position().top+$("svgHead").outerHeight(true);
+      $("#divBody").css("margin-top",currHeight);
+$("#result").html("currHeight = "+currHeight);
+      
+   }
+   lastScrollTop = st;
+});
+</script>
+
+</body></html>

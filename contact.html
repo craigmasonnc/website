@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- title and meta -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="" />
+<title>Craig Mason</title>
+    
+<!-- css -->
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css" />
+    
+<!-- js -->
+<script src="js/classie.js"></script>
+<script>
+    function init() {
+        window.addEventListener('scroll', function(e){
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 300,
+                header = document.querySelector("header");
+            if (distanceY > shrinkOn) {
+                classie.add(header,"smaller");
+            } else {
+                if (classie.has(header,"smaller")) {
+                    classie.remove(header,"smaller");
+                }
+            }
+        });
+    }
+    window.onload = init();
+</script>
+</head>
+
+
+
+<body>
+
+<div id="wrapper">
+
+<header>
+    <div class="container clearfix">
+	
+	<a id="svgLink" href="index.html">
+	    <object type="image/svg+xml" data="accident3.svg" class="svgHead" id="svgHead">Your browswer does not support SVG</object>
+	</a>
+	<h1 id="logo">
+            <a id="logoLink" href="index.html">Craig&nbsp;Mason</a>
+        </h1>
+        <nav>
+            <a href="">Resum&eacute;</a>
+            <a href="music.html">Music</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header><!-- /header -->
+
+<div id="main">
+    <div id="content">
+        <section>
+            <div class="container">
+		<p>
+		<img id="me" src="me.jpg">
+		Craig Mason<br>
+		Phone: 704.533.2575<br>
+		Email: <a href="mailto:craigmasonnc@gmail.com">craigmasonnc@gmail.com</a><br>
+		
+		<!--<div id="linkedIn">//-->
+		&nbsp;<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/craig-mason/97/914/230" data-format="click" data-related="false"></script>
+		<!--</div>//-->
+		</p>
+	    </div>
+	</section>
+    </div>                
+</div><!-- #main -->
+
+
+<footer>
+<div id="info-bar">
+    <div class="container clearfix">
+        <span class="all-tutorials"><a href="index.html">&larr; Home</a></span>
+        <span class="back-to-tutorial"><a href="contact.html">Contact</a></span>
+    </div>
+</div><!-- /#top-bar -->
+</footer><!-- /footer -->
+
+
+
+</div><!-- /#wrapper -->
+
+
+</body>
+</html>
